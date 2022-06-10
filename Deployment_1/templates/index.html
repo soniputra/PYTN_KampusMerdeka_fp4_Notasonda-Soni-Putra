@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Credit Card Clustering - Site</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{  url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/aremixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+    integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/solid.css"
+    integrity="sha384-DhmF1FmzR9+RBLmbsAts3Sp+i6cZMWQwNTRsew7pO/e4gvzqmzcpAzhDIwllPonQ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/fontawesome.css"
+    integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous" />
+
+  <!-- Chart JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
+  </script>
+
+  <!-- Template Main CSS File -->
+  <link href="{{  url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha - v4.3.0
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto">Credit Card Clustering</h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Explanation</a></li>
+          <li><a class="nav-link   scrollto" href="#portfolio">Chart</a></li>
+          <li><a class="nav-link   scrollto" href="#chartjs">Chart JS</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Prediction Section</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+          data-aos="fade-up">
+          <h1>Clustering of Credit Card Users</h1>
+          <h2>This project is to fulfill the task of course introduction to Python For Data Science</h2>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in">
+          <img src="{{  url_for('static', filename='img/clust_gif.gif') }}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Explanation
+            <br>
+            <div class="mt-3 text-black-50" style="font-size:15px">
+              In this section, there is a description of the
+              abstract and also a
+              description
+              of the data.
+            </div>
+          </h2>
+
+        </div>
+
+        <div class="row content">
+          <nav>
+            <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist"
+              style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, Arial, Helvetica, sans-serif;">
+              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-abstract"
+                type="button" role="tab" aria-controls="nav-home" aria-selected="true">Abstract</button>
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-data"
+                type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Data</button>
+              <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-objective"
+                type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Objective</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+
+            <!-- Abstract Content -->
+            <div class="tab-pane fade show active" id="nav-abstract" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class="mt-4">
+                <p style='text-align: justify;'>
+                  Keberadaan kartu kredit sudah dikenal sejak lama, namun model transaksi keuangan saat ini membuat
+                  kartu kredit menjadi jauh lebih berguna dan nyaman. Tapi apa sebenarnya kartu kredit itu? Secara
+                  sederhana, kartu kredit diartikan sebagai alat pembayaran berupa kartu yang biaya pembayarannya dalam
+                  suatu transaksi keuangan ditanggung terlebih dahulu oleh penerbit kartu. Setelah itu, pemegang kartu
+                  kredit wajib melunasi hutang pembayaran kartu tepat waktu yang telah disepakati sebelumnya. Kartu
+                  kredit berbeda dari kartu debit uang asli nasabah, sehingga kartu kredit dapat menawarkan manfaat unik
+                  bagi orang yang menggunakannya. Namun, dalam banyak hal, kartu kredit tidak berbeda dengan kartu
+                  debit.Perbedaannya hanya pada modal yang digunakan. Dana kartu kredit adalah saldo terutang yang
+                  dibatasi hingga jumlah tertentu.</p>
+
+                <p style='text-align: justify;'>
+                  Pemegang kartu kredit akan dikenakan biaya tertentu atas penggunaan kartu kredit tersebut. Biaya
+                  tahunan dibebankan kepada pengguna kartu kredit sesuai dengan fasilitas yang diberikan oleh bank.
+                  Dalam banyak kasus, biaya tahunan tahun pertama sering kali diabaikan untuk keuntungan tambahan bagi
+                  pengguna kartu kredit. Selain itu, ada biaya keterlambatan dan bunga. Biaya keterlambatan pembayaran
+                  dikenakan jika pemegang kartu terlambat membayar tagihan. Selama periode ini, bunga akan dikenakan
+                  jika nasabah menggunakan kartu untuk pembayaran kredit atau cicilan. Jika nasabah melebihi batas kartu
+                  kreditnya, nasabah juga akan dikenakan biaya.</p>
+
+                <p style='text-align: justify;'>
+                  Selain biaya tersebut, terdapat biaya tambahan untuk beberapa layanan yang ditawarkan oleh kartu
+                  kredit, seperti biaya penarikan tunai dan informasi pembayaran. Biaya penarikan tunai biasanya
+                  dikenakan jika Anda menggunakan kartu kredit untuk menarik dana. Sedangkan biaya informasi pembayaran
+                  akan dikenakan apabila nasabah membutuhkan informasi pembayaran yang detail dan lengkap. Jika
+                  memungkinkan, pilihlah kartu kredit tanpa biaya bulanan agar lebih ringan.</p>
+              </div>
+
+            </div>
+            <div class="tab-pane fade" id="nav-data" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="mt-4">
+                <p style='text-align: justify;'>
+                  Dataset yang digunakan yaitu <a href="https://www.kaggle.com/arjunbhasin2013/ccdata"
+                    style="text-decoration: none;"><b style="font-style: italic">Credit Card Data</b></a> :
+                  <br><br>
+                  Dataset ini berisi transaksi pengguna kartu kredit sebanyak 9000 orang selama 6 bulan. Data ini
+                  memiliki 18 atribut, antara lain:</p>
+                <table class="table table-white table-bordered border-4 border-white">
+                  <thead>
+                    <tr style="text-align: center">
+                      <th style="text-align: center" scope="col">No</th>
+                      <th style="text-align: center" scope="col">Column Name</th>
+                      <th style="text-align: center" scope="col">Keterangan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- 1 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">1</th>
+                      <td>CUSTID</td>
+                      <td>Identification of Credit Card holder (Categorical)</td>
+                    </tr>
+                    <!-- 2 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">2</th>
+                      <td>BALANCE</td>
+                      <td>Balance amount left in their account to make purchases</td>
+                    </tr>
+                    <!-- 3 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">3</th>
+                      <td>BALANCEFREQUENCY</td>
+                      <td>How frequently the Balance is updated, score between 0 and 1 (1 = frequently updated, 0 = not
+                        frequently updated)</td>
+                    </tr>
+                    <!-- 4 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">4</th>
+                      <td>PURCHASES</td>
+                      <td>Amount of purchases made from account</td>
+                    </tr>
+                    <!-- 5 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">5</th>
+                      <td>ONEOFFPURCHASES</td>
+                      <td>Maximum purchase amount done in one-go</td>
+                    </tr>
+                    <!-- 6 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">6</th>
+                      <td>INSTALLMENTSPURCHASES</td>
+                      <td>Amount of purchase done in installment</td>
+                    </tr>
+                    <!-- 7 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">7</th>
+                      <td>CASHADVANCE</td>
+                      <td>Cash in advance given by the user</td>
+                    </tr>
+                    <!-- 8 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">8</th>
+                      <td>PURCHASESFREQUENCY</td>
+                      <td>How frequently the Purchases are being made, score between 0 and 1 (1 = frequently purchased,
+                        0 = not frequently purchased)</td>
+                    </tr>
+                    <!-- 9 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">9</th>
+                      <td>ONEOFFPURCHASESFREQUENCY</td>
+                      <td>How frequently Purchases are happening in one-go (1 = frequently purchased, 0 = not frequently
+                        purchased)</td>
+                    </tr>
+                    <!-- 10 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">10</th>
+                      <td>PURCHASESINSTALLMENTSFREQUENCY</td>
+                      <td>How frequently purchases in installments are being done (1 = frequently done, 0 = not
+                        frequently done)</td>
+                    </tr>
+                    <!-- 11 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">11</th>
+                      <td>CASHADVANCEFREQUENCY</td>
+                      <td>How frequently the cash in advance being paid</td>
+                    </tr>
+                    <!-- 12 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">12</th>
+                      <td>CASHADVANCETRX</td>
+                      <td>Number of Transactions made with style="text-align: center""Cash in Advance"</td>
+                    </tr>
+                    <!-- 13 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">13</th>
+                      <td>PURCHASESTRX</td>
+                      <td>Number of purchase transactions made</td>
+                    </tr>
+                    <!-- 14 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">14</th>
+                      <td>CREDITLIMIT</td>
+                      <td>Limit of Credit Card for user</td>
+                    </tr>
+                    <!-- 15 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">15</th>
+                      <td>PAYMENTS</td>
+                      <td>Amount of Payment done by user</td>
+                    </tr>
+                    <!-- 16 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">16</th>
+                      <td>MINIMUM_PAYMENTS</td>
+                      <td>Minimum amount of payments made by user</td>
+                    </tr>
+                    <!-- 17 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">17</th>
+                      <td>PRCFULLPAYMENT</td>
+                      <td>Percent of full payment paid by user</td>
+                    </tr>
+                    <!-- 18 -->
+                    <tr>
+                      <th style="text-align: center" scope="row">18</th>
+                      <td>TENURE</td>
+                      <td>Tenure of credit card service for user</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="nav-objective" role="tabpanel" aria-labelledby="nav-contact-tab">
+              <div class="mt-4">
+                <p>Final Project 4 ini dibuat guna mengevaluasi konsep Clustering sebagai berikut:</p>
+                <ul style="text-transform: capitalize">
+                  <li>Mampu memahami konsep Clustering dengan menggunakan Scikit-Learn</li>
+                  <li>Mampu mempersiapkan data untuk digunakan dalam Clustering</li>
+                  <li>Mampu mengimplementasikan Clustering pada data yang diberikan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+
+
+
+
+    <!-- ======= Chart Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Chart</h2>
+          <p>A chart can represent tabular numeric data, functions or some kinds of quality structure and provides
+            different info.</p>
+        </div>
+
+        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up">
+          <li data-filter="*" class="filter-active">All Graphic Plot</li>
+          <li data-filter=".filter-app">KMeans Clustering</li>
+          <li data-filter=".filter-card">Hierarchy Clustering</li>
+          <li data-filter=".filter-web">DBScan Clustering</li>
+        </ul>
+
+        <div class="row portfolio-container" data-aos="fade-up">
+
+          <!-- Chart Section 1 -->
+          <div>
+            <!-- d-1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/kmeans_clust.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>KMeans Clustering</h4>
+                <p>Clustering using KMeans</p>
+              </div>
+            </div>
+            <!-- end of chart section - section 1 -->
+          </div>
+
+          <!-- Chart Section 2 -->
+          <div>
+            <!-- a-1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/hier_clust.png') }}"
+                  class="img-fluid" alt=""></div>
+              <div class="portfolio-info">
+                <h4>Hierarchy Clustering</h4>
+                <p>Clustering using Hierarchy Clustering</p>
+              </div>
+            </div>
+            <!-- a-2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/hier_graph_1.png') }}"
+                  class="img-fluid" alt=""></div>
+              <div class="portfolio-info">
+                <h4>Hierarchy Clustering</h4>
+                <p>Clustering using Hierarchy Clustering</p>
+              </div>
+            </div>
+            <!-- a-3 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/hier_graph_2.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Hierarchy Clustering</h4>
+                <p>Clustering using Hierarchy Clustering</p>
+              </div>
+            </div>
+            <!-- a-4 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/hier_graph_3.png') }}"
+                  class="img-fluid" alt=""></div>
+              <div class="portfolio-info">
+                <h4>Hierarchy Clustering</h4>
+                <p>Clustering using Hierarchy Clustering</p>
+              </div>
+            </div>
+            <!-- a-5 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/hier_graph_4.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Hierarchy Clustering</h4>
+                <p>Clustering using Hierarchy Clustering</p>
+              </div>
+            </div>
+            <!-- end of chart section - section 2 -->
+          </div>
+
+          <!-- Chart Section 3 -->
+          <div>
+            <!-- b-2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/hist_dist.png') }}"
+                  class="img-fluid" alt=""></div>
+              <div class="portfolio-info">
+                <h4>Distribution Plot</h4>
+              </div>
+            </div>
+            <!-- b-3 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/corr_chart.png') }}"
+                  class="img-fluid" alt=""></div>
+              <div class="portfolio-info">
+                <h4>Correlation Plot</h4>
+              </div>
+            </div>
+            <!-- end of chart section - section 3 -->
+          </div>
+        </div>
+      </div>
+    </section><!-- End Chart Section -->
+
+    <!-- ======= Chart JS Section ======= -->
+    <section id="chartjs" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Chart Using "Chart JS" Framework
+            <br>
+            <div class="mt-3 text-black-50" style="font-size:15px">
+              This section will show some charts using the Chart JS framework
+            </div>
+          </h2>
+
+        </div>
+
+        <div class="row content">
+          <center>
+            <div>
+              <canvas id="Chart2" style="width:100%;max-width:800px"></canvas>
+              <!-- Balance Frequency Chart JS Diagram -->
+              <script>
+                var xValues = [
+                  "Tenure 12 Bulan",
+                  "Tenure 11 Bulan",
+                  "Tenure 10 Bulan",
+                  "Tenure 9 Bulan",
+                  "Tenure 8 Bulan",
+                  "Tenure 7 Bulan",
+                  "Tenure 6 Bulan",
+                ];
+                var yValues = [
+                  7584,
+                  365,
+                  236,
+                  175,
+                  196,
+                  190,
+                  204
+                ];
+                var barColors = [
+                  "lime",
+                  "olive",
+                  "yellow",
+                  "teal",
+                  "aqua",
+                  "navy",
+                  "maroon"
+                ];
+
+                new Chart("Chart2", {
+                  type: "bar",
+                  data: {
+                    labels: xValues,
+                    datasets: [{
+                      backgroundColor: barColors,
+                      data: yValues
+                    }]
+                  },
+                  options: {
+                    legend: {
+                      display: false
+                    },
+                    title: {
+                      display: true,
+                      text: "Tenure"
+                    }
+                  }
+                });
+              </script>
+            </div>
+            <div class="mt-3">
+              <h3>Keterangan Chart</h3>
+              <!-- On tables -->
+              <table class="table">
+                <thead>
+                  <tr style="text-align:center;">
+                    <th scope="col">No</th>
+                    <th scope="col">Tenure</th>
+                    <th scope="col">Jumlah</th>
+                    <th scope="col">Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-success">
+                    <th class="table-success" scope="row">1</th>
+                    <td class="table-success">Tenure 12 Month</td>
+                    <td style="text-align:center;" class="table-success">7584</td>
+                    <td class="table-success">Banyaknya pengguna credit card yang memiliki jangka waktu sebanyak 12
+                      Bulan sebanyak 7584 Pengguna</td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th class="table-secondary" scope="row">2</th>
+                    <td class="table-secondary">Tenure 11 Month</td>
+                    <td style="text-align:center;" class="table-secondary">365</td>
+                    <td class="table-secondary">Banyaknya pengguna credit card yang memiliki jangka waktu sebanyak 11
+                      Bulan sebanyak 365 Pengguna</td>
+                  </tr>
+                  <tr class="table-info">
+                    <th class="table-info" scope="row">3</th>
+                    <td class="table-info">Tenure 10 Month</td>
+                    <td style="text-align:center;" class="table-info">236</td>
+                    <td class="table-info">Banyaknya pengguna credit card yang memiliki jangka waktu sebanyak 10
+                      Bulan sebanyak 236 Pengguna</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th class="table-light" scope="row">4</th>
+                    <td class="table-light">Tenure 9 Month</td>
+                    <td style="text-align:center;" class="table-light">175</td>
+                    <td class="table-light">Banyaknya pengguna credit card yang memiliki jangka waktu sebanyak 9
+                      Bulan sebanyak 175 Pengguna</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th class="table-warning" scope="row">5</th>
+                    <td class="table-warning">Tenure 8 Month</td>
+                    <td style="text-align:center;" class="table-warning">196</td>
+                    <td class="table-warning">Banyaknya pengguna credit card yang memiliki jangka waktu sebanyak 8
+                      Bulan sebanyak 196 Pengguna</td>
+                  </tr>
+                  <tr class="table-danger">
+                    <th class="table-danger" scope="row">6</th>
+                    <td class="table-danger">Tenure 7 Month</td>
+                    <td style="text-align:center;" class="table-danger">190</td>
+                    <td class="table-danger">Banyaknya pengguna credit card yang memiliki jangka waktu sebanyak 7
+                      Bulan sebanyak 190 Pengguna</td>
+                  </tr>
+                  <tr class="table-dark">
+                    <th class="table-dark" scope="row">7</th>
+                    <td class="table-dark">Tenure 6 Month</td>
+                    <td style="text-align:center;" class="table-dark">204</td>
+                    <td class="table-dark">Banyaknya pengguna credit card yang memiliki jangka waktu sebanyak 6
+                      Bulan sebanyak 204 Pengguna</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </center>
+        </div>
+      </div>
+
+    </section><!-- End Chart JS Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>This group contains 3 certified independent study participants, namely:</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start" data-aos="zoom-in">
+              <div class="pic"><img src="{{ url_for('static', filename='img/team/team-1.jpg') }}" class="img-fluid"
+                  alt=""></div>
+              <div class="member-info">
+                <h4>Ahmad Firdaus Zulva</h4>
+                <span>Studi Independen</span>
+                <p>PYTN-KS04-001</p>
+                <div class="social">
+                  <a href="https://github.com/zulvaaf"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/ahmadfirdauszulva111/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pic"><img src="{{ url_for('static', filename='img/team/team-3.jpg') }}" class="img-fluid"
+                  alt=""></div>
+              <div class="member-info">
+                <h4>Notasonda Soni Putra</h4>
+                <span>Studi Independen</span>
+                <p>PYTN-KS04-008</p>
+                <div class="social">
+                  <a href="https://github.com/soniputra"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/notasonda-soni-putra-728762195/"><i
+                      class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
+              <div class="pic"><img src="{{ url_for('static', filename='img/team/team-4.jpg') }}" class="img-fluid"
+                  alt=""></div>
+              <div class="member-info">
+                <h4>Windy Mega Melani</h4>
+                <span>Studi Independen</span>
+                <p>PYTN-KS04-003</p>
+                <div class="social">
+                  <a href="github.com/windymega/"><i class="fa-brands fa-github"></i></a>
+                  <a href="linkedin.com/in/windymega/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Prediction Section</h2>
+          <p>This section will provide information on which cluster users are in, using the <b>K-Means Clustering</b>
+            method.
+          </p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <h4>Hasil Prediksi</h4>
+                <p>{{ prediction_text }}</p>
+              </div>
+
+              <div>
+                <nav>
+                  <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist"
+                    style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, Arial, Helvetica, sans-serif;">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-clus0"
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">Cluster 0</button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-clus1"
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Cluster 1</button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-clus2"
+                      type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Cluster 2</button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-clus3"
+                      type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Cluster 3</button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-clus4"
+                      type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Cluster 4</button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-clus5"
+                      type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Cluster 5</button>
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+
+                  <!-- Clus 0 -->
+                  <div class="tab-pane fade show active" id="nav-clus0" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <img src="{{ url_for('static', filename='img/1.png') }}" class="img-fluid animated" alt="">
+                  </div>
+                  <!-- Clus 1 -->
+                  <div class="tab-pane fade" id="nav-clus1" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <img src="{{ url_for('static', filename='img/2.png') }}" class="img-fluid animated" alt="">
+                  </div>
+                  <!-- Clus 2 -->
+                  <div class="tab-pane fade" id="nav-clus2" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <img src="{{ url_for('static', filename='img/3.png') }}" class="img-fluid animated" alt="">
+                  </div>
+                  <!-- Clus 3 -->
+                  <div class="tab-pane fade" id="nav-clus3" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <img src="{{ url_for('static', filename='img/4.png') }}" class="img-fluid animated" alt="">
+                  </div>
+                  <!-- Clus 4 -->
+                  <div class="tab-pane fade" id="nav-clus4" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <img src="{{ url_for('static', filename='img/5.png') }}" class="img-fluid animated" alt="">
+                  </div>
+                  <!-- Clus 5 -->
+                  <div class="tab-pane fade" id="nav-clus5" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <img src="{{ url_for('static', filename='img/6.png') }}" class="img-fluid animated" alt="">
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="{{ url_for('predict')}}" method="post" class="php-email-form">
+              <div class="row">
+                <div class="form-group">
+                  <label for="BALANCE">Balance</label>
+                  <input type="text" class="form-control" name="BALANCE" id="BALANCE"
+                    placeholder="Insert Balance Value - Range (0 - 19043)" required>
+                </div>
+                <div class="form-group">
+                  <label for="BALANCE_FREQUENCY">Balance Frequency</label>
+                  <input type="text" class="form-control" name="BALANCE_FREQUENCY" id="BALANCE_FREQUENCY"
+                    placeholder="Insert Balance Frequency Value - Range (0.0 - 1.0)" required>
+                </div>
+                <div class="form-group">
+                  <label for="PURCHASES">Purchases</label>
+                  <input type="text" class="form-control" name="PURCHASES" id="PURCHASES"
+                    placeholder="Insert value Purchases - Range (0 - 49039)" required>
+                </div>
+                <div class="form-group">
+                  <label for="ONEOFF_PURCHASES">OneOff Purchases</label>
+                  <input type="text" class="form-control" name="ONEOFF_PURCHASES" id="ONEOFF_PURCHASES"
+                    placeholder="Insert value OneOff Purchases - Range (0 - 40761)" required>
+                </div>
+                <div class="form-group">
+                  <label for="INSTALLMENTS_PURCHASES">Installments Purchases</label>
+                  <input type="text" class="form-control" name="INSTALLMENTS_PURCHASES" id="INSTALLMENTS_PURCHASES"
+                    placeholder="Insert value Installments Purchases - Range (0 - 22500)" required>
+                </div>
+                <div class="form-group">
+                  <label for="CASH_ADVANCE">Cash advance</label>
+                  <input type="text" class="form-control" name="CASH_ADVANCE" id="CASH_ADVANCE"
+                    placeholder="Insert value Cash advance - Range (0 - 47137)" required>
+                </div>
+                <div class="form-group">
+                  <label for="PURCHASES_FREQUENCY">Purchases Frequency</label>
+                  <input type="text" class="form-control" name="PURCHASES_FREQUENCY" id="PURCHASES_FREQUENCY"
+                    placeholder="Insert value Purchases Frequency - Range (0.0 - 1.0)" required>
+                </div>
+                <div class=" form-group">
+                  <label for="ONEOFF_PURCHASES_FREQUENCY">OneOff Purchases Frequency</label>
+                  <input type="text" class="form-control" name="ONEOFF_PURCHASES_FREQUENCY"
+                    id="ONEOFF_PURCHASES_FREQUENCY"
+                    placeholder="Insert value OneOff Purchases Frequency - Range (0.0 - 1.0)" required>
+                </div>
+                <div class=" form-group">
+                  <label for="PURCHASES_INSTALLMENTS_FREQUENCY">Purchases Installments Frequency</label>
+                  <input type="text" class="form-control" name="PURCHASES_INSTALLMENTS_FREQUENCY"
+                    id="PURCHASES_INSTALLMENTS_FREQUENCY"
+                    placeholder="Insert value Purchases Installments Frequency - Range (0.0 - 1.0)" required>
+                </div>
+                <div class=" form-group">
+                  <label for="CASH_ADVANCE_FREQUENCY">Cash Advance Frequency</label>
+                  <input type="text" class="form-control" name="CASH_ADVANCE_FREQUENCY" id="CASH_ADVANCE_FREQUENCY"
+                    placeholder="Insert value Cash Advance Frequency - Range (0.0 - 1.5)" required>
+                </div>
+                <div class=" form-group">
+                  <label for="CASH_ADVANCE_TRX">Cash Advance Transaction</label>
+                  <input type="number" class="form-control" name="CASH_ADVANCE_TRX" id="CASH_ADVANCE_TRX"
+                    placeholder="Insert value Cash Advance Transaction - Range (0 - 123)" required min="0" max="123"
+                    value="0">
+                </div>
+                <div class="form-group">
+                  <label for="PURCHASES_TRX">Purchases Transaction</label>
+                  <input type="number" class="form-control" name="PURCHASES_TRX" id="PURCHASES_TRX"
+                    placeholder="Insert value Purchases Transaction - Range (0 - 358)" required min="0" max="358"
+                    value="0">
+                </div>
+                <div class="form-group">
+                  <label for="CREDIT_LIMIT">Credit Limit</label>
+                  <input type="text" class="form-control" name="CREDIT_LIMIT" id="CREDIT_LIMIT"
+                    placeholder="Insert Credit Limit - Range (50 - 30000)" required>
+                </div>
+                <div class="form-group">
+                  <label for="PAYMENTS">Payments</label>
+                  <input type="text" class="form-control" name="PAYMENTS" id="PAYMENTS"
+                    placeholder="Insert Payments - Range (0 - 50721)" required>
+                </div>
+                <div class="form-group">
+                  <label for="MINIMUM_PAYMENTS">Minimum Payments</label>
+                  <input type="text" class="form-control" name="MINIMUM_PAYMENTS" id="MINIMUM_PAYMENTS"
+                    placeholder="Insert Minimum Payments - Range (0 - 76406)" required>
+                </div>
+                <div class="form-group">
+                  <label for="PRC_FULL_PAYMENT">Price Full Payment</label>
+                  <input type="text" class="form-control" name="PRC_FULL_PAYMENT" id="PRC_FULL_PAYMENT"
+                    placeholder="Insert Price Full Payment - Range (0.0 - 1.0)" required">
+                </div>
+                <div class="form-group">
+                  <label for="TENURE">Tenure</label>
+                  <select class="form-select" aria-label="Default select example" name="TENURE" id="TENURE">
+                    <option selected>Choose for Tenure</option>
+                    <option value="6">6 Month</option>
+                    <option value="7">7 Month</option>
+                    <option value="8">8 Month</option>
+                    <option value="9">9 Month</option>
+                    <option value="10">10 Month</option>
+                    <option value="11">11 Month</option>
+                    <option value="12">12 Month</option>
+                  </select>
+                </div>
+                <div class="text-center"><button type="submit">Predict</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | Re-design by : Soni, Zulva, Windy
+      </div>
+
+
+
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/waypoints/noframework.waypoints.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
